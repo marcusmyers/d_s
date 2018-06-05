@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_PASSWORD: "example"
+      WORDPRESS_DEBUG: "true"
+    volumes:
+      - .:/var/www/html/wp-content/themes/d_s
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example
